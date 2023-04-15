@@ -245,13 +245,14 @@ fn.DGP <- function(N,
   dgp.Settings$no.Var.Missing  <- no.Var.Missing
   dgp.Settings$no.Var.Total    <- no.Var.Observed + no.Var.Missing +1
   dgp.Settings$var.Type        <- var.Type
+  dgp.Settings$no.Category     <- no.Category
   dgp.Settings$imp.Method      <- imp.Method
   dgp.Settings$nmar            <- nmar
   # ------------------------------------!
   # ------------------------------------!
   dgp <- list(
-    dgp.Sample = dgp.Sample,
-    dgp.Models = dgp.Models,
+    dgp.Sample   = dgp.Sample,
+    dgp.Models   = dgp.Models,
     dgp.Settings = dgp.Settings
   )
   
