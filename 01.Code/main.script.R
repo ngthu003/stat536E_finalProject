@@ -87,3 +87,20 @@ cca.cts <- fn.Complete.Case.Analysis(dgp.cts)
 data.frame(t(sapply(cca.cts,c)))
 cca.ord <- fn.Complete.Case.Analysis(dgp.ord)
 data.frame(t(sapply(cca.ord,c)))
+
+
+
+
+
+
+# ============================================================================!
+# 3) Conditional MI Analysis --------------------------------------------------
+# ----------------------------------------------------------------------------!
+
+source('01.Code/fn.Conditional.MI.R')
+
+m <- 3
+cond.MI.cts <- fn.Conditional.MI(dgp.cts, m = m)
+data.frame(t(sapply(cond.MI.cts,c)))
+cond.MI.ord <- fn.Conditional.MI(dgp.ord, m = m, no.Category = dgp.ord$dgp.Settings$no.Category)
+data.frame(t(sapply(cond.MI.ord,c)))
