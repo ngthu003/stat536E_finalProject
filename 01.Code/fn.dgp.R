@@ -241,10 +241,12 @@ fn.DGP <- function(N,
   # ------------------------------------!
   dgp.Settings <- list()
   # --
-  dgp.Settings$no.Var.Total <- no.Var.Observed + no.Var.Missing +1
-  dgp.Settings$var.Type     <- var.Type
-  dgp.Settings$imp.Method   <- imp.Method
-  dgp.Settings$nmar         <- nmar
+  dgp.Settings$no.Var.Observed <- no.Var.Observed
+  dgp.Settings$no.Var.Missing  <- no.Var.Missing
+  dgp.Settings$no.Var.Total    <- no.Var.Observed + no.Var.Missing +1
+  dgp.Settings$var.Type        <- var.Type
+  dgp.Settings$imp.Method      <- imp.Method
+  dgp.Settings$nmar            <- nmar
   # ------------------------------------!
   # ------------------------------------!
   dgp <- list(
