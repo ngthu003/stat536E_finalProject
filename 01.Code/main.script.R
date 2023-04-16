@@ -12,9 +12,10 @@
 # ============================================================================!
 # 0) Libraries ----------------------------------------------------------------
 # ----------------------------------------------------------------------------!
-libs <- c('tidyverse', 'mi', 'arm', 'Amelia', 'mvnmle', 'MASS')
+libs <- c('tidyverse', 'mi', 'arm', 'Amelia', 'mvnmle', 'MASS', 'norm2', 'nnet')
 lapply(libs, require, character.only = TRUE)
 rm(libs)
+
 
 
 # ============================================================================!
@@ -24,7 +25,7 @@ rm(libs)
 source('01.Code/fn.DGP.R')
 #' @examples
 #' ### A) Fixed --------------------------
-#' tmp.N               <- 10           # #(obs)
+#' tmp.N               <- 40           # #(obs)
 #' tmp.no.Var.Observed <- 3            # #(var. fully observed)
 #' 
 #' ### B) Adjustable ---------------------
@@ -104,3 +105,19 @@ cond.MI.cts <- fn.Conditional.MI(dgp.cts, m = m)
 data.frame(t(sapply(cond.MI.cts,c)))
 cond.MI.ord <- fn.Conditional.MI(dgp.ord, m = m, no.Category = dgp.ord$dgp.Settings$no.Category)
 data.frame(t(sapply(cond.MI.ord,c)))
+
+
+
+
+
+# ============================================================================!
+# 3) Joint MVN MI Analysis ----------------------------------------------------
+# ----------------------------------------------------------------------------!
+
+source('01.Code/fn.Joint.MVN.MI.R')
+
+m <- 3
+joint.MI.amelia.cts <- fn.Joint.MVN.MI(dgp.cts, m = m, command = 'amelia')
+data.frame(t(sapply(joint.MI.amelia.cts,c)))
+joint.MI.amelia.ord <- fn.Joint.MVN.MI(dgp.ord, m = m, command = 'amelia')
+data.frame(t(sapply(joint.MI.amelia.ord,c)))
