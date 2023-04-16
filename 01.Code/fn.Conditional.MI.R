@@ -4,7 +4,6 @@
 #'
 #' @param dgp         # randomly generated dataset w/ missing data
 #' @param m           #(imputation)
-#' @param imp.Method  imputation method: PPD or PMM
 #' @param chains      for calling mi fn, default to 4
 #' @param iter        #(iteration) per imputation, default to 30
 #' @param no.Category #(category) per discrete var.
@@ -14,7 +13,7 @@
 fn.Conditional.MI <- function(
     dgp,
     m, 
-    imp.Method ="ppd", chains=5, iter=30, no.Category=3, mcar=FALSE
+    chains=5, iter=30, no.Category=3, mcar=FALSE
 ) {
 
   
