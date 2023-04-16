@@ -37,7 +37,7 @@ source('01.Code/fn.DGP.R')
 #' tmp.strong <- 0                     # applicable only when "triangular"
 #' 
 #' tmp.no.Category     <- 3
-#' tmp.imp.Method      <- 'ppd'
+#' tmp.imp.Method      <- 'pmm'
 #'
 #' ### C) Other --------------------------
 #' tmp.estimate.CPCs <- F              # F to save time, default is T
@@ -114,7 +114,9 @@ data.frame(t(sapply(cond.MI.ord,c)))
 # 3) Joint MVN MI Analysis ----------------------------------------------------
 # ----------------------------------------------------------------------------!
 
+source('01.Code/fn.Joint.MVN.MI.helper.PMM.R')
 source('01.Code/fn.Joint.MVN.MI.R')
+
 
 m <- 3
 joint.MI.amelia.cts <- fn.Joint.MVN.MI(dgp.cts, m = m, command = 'amelia')

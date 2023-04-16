@@ -24,7 +24,7 @@ fn.Joint.MVN.MI <- function(
   no.Category <- dgp$dgp.Settings$no.Category 
   
   # Meta data on target var.
-  v <- which(names(rdf.Obs) == 'y_1')
+  col.idx.Y <- which(names(rdf.Obs) == 'y_1')
   if (var.Type == 'ordinal') {
     rdf.Obs$y_1 <- as.numeric(rdf.Obs$y_1)
   }
@@ -108,14 +108,13 @@ fn.Joint.MVN.MI <- function(
   # ------------------------------------------------------!
   
   if (imp.Method == 'pmm'){
-    imputed.Data <- .amelia.pmm(dgp, imputed.Data, var.Type=var.Type, v=v, command=command)
-    if (type == 'ordinal'){
+    imputed.Data <- fn.Joint.MVN.MI.helper.PMM(dgp, m, imputed.Data, col.idx.Y)
+    if (var.Type == 'ordinal'){
       for (k in seq_along(res$choice.Prob)){
-        res$choice.Prob[[k]][dgp$dgp.Sample$ind.Miss.Y,] <- res$choice.Prob[[k]][!dgp$dgp.Sample$ind.Miss.Y,][imputed.Data$mark,]
+        res$choice.Prob[[k]][dgp$dgp.Sample$ind.Miss.Y,] <- res$choice.Prob[[k]][!dgp$dgp.Sample$ind.Miss.Y,][imputed.Data$idx,]
       }	
     }
   }	
-  
   
   
   
