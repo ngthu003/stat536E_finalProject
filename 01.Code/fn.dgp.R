@@ -48,9 +48,9 @@ fn.DGP <- function(N,
                    miss.Rate.Y,
                    restriction, 
                    strong = 0,
-                   imp.Method = 'ppd',
-                   estimate.CPCs = FALSE) {
+                   imp.Method = 'ppd') {
   
+  estimate.CPCs <- (restriction == 'none')
   
   # ======================================================!
   # 1) Generate Data --------------------------------------
