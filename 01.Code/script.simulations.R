@@ -41,7 +41,7 @@ source('01.Code/fn.Joint.MVN.MI.R')
 
 
 ## Fixed --------------------------------------------------
-global.N               <- 20  #(obs)
+global.N               <- 100  #(obs)
 global.no.Var.Observed <- 5    #(var. fully observed)
 global.no.Category     <- 5    #(categories) per discrete var.
 global.strong          <- 0    # applicable only when "triangular"
@@ -127,7 +127,7 @@ fn.null.to.NA <- function(x) {ifelse(is.null(x), NA, x)}
 # ----------------------------------------------------------------------------!
 
 counter <- 1
-no.Iteration <- 1
+no.Iteration <- 5
 
 ## 0: Iteration -------------------------------------------
 for (iter in 1:no.Iteration) {
@@ -252,3 +252,21 @@ for (iter in 1:no.Iteration) {
 
 
 
+
+# ============================================================================!
+# 5) Fix df str ---------------------------------------------------------------
+# ----------------------------------------------------------------------------!
+
+str(overall.Results)
+idx <- which(colnames(overall.Results) %in% c('Iteration', 'no.Var.Missing', 'N', 
+                                              'no.Var.Observed', 'no.Category','no.Imputation'))
+overall.Results[idx] <- sapply(overall.Results[idx], as.integer)
+
+idx <- c(which(colnames(overall.Results) %in% c('miss.Rate.Y', 'miss.Rate.X')),
+         13:ncol(overall.Results))
+overall.Results[idx] <- sapply(overall.Results[idx], as.numeric)
+str(overall.Results)
+
+
+save(overall.Results, file = 'overall.Results.RData')
+write.table(overall.Results, file='overall.Results.csv', sep=",", col.names=TRUE, row.names=FALSE)
