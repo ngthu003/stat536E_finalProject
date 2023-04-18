@@ -339,9 +339,12 @@ for (value.Type in Options.value.Type.Continuous) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/01.MAR_vs_NMAR/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -382,9 +385,12 @@ for (value.Type in Options.value.Type.Ordinal) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/01.MAR_vs_NMAR/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -426,9 +432,12 @@ for (value.Type in Options.value.Type.Continuous) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/01.MAR_vs_NMAR/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -469,9 +478,12 @@ for (value.Type in Options.value.Type.Ordinal) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/01.MAR_vs_NMAR/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -524,9 +536,12 @@ for (value.Type in Options.value.Type.Continuous) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/02.Miss_Rate_Y/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -567,9 +582,12 @@ for (value.Type in Options.value.Type.Ordinal) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/02.Miss_Rate_Y/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -610,9 +628,12 @@ for (value.Type in Options.value.Type.Continuous) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/02.Miss_Rate_Y/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
@@ -653,9 +674,12 @@ for (value.Type in Options.value.Type.Ordinal) {
     tmp.metric.Type = metric.Type
   )
   p.list[[counter]] <- p
+  counter <- counter+1
+  p.list[[counter]] <- NULL
 }
 
-p <- ggarrange(plotlist = p.list, ncol = 1, common.legend = TRUE, legend = 'bottom')
+p <- ggarrange(plotlist = p.list, ncol = 1, heights = c(1, 0.1, 1, .1, 1), 
+               common.legend = TRUE, legend = 'bottom')
 png(paste0('03.Figures/02.Miss_Rate_Y/', dimension, '.', var.Type, '.', 
            imp.Method, '.', metric.Type, '.png'), 
     width = 500, height = 1000, pointsize = 15)
