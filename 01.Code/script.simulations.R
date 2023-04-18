@@ -41,7 +41,7 @@ source('01.Code/fn.Joint.MVN.MI.R')
 
 
 ## Fixed --------------------------------------------------
-global.N               <- 100  #(obs)
+global.N               <- 1000  #(obs)
 global.no.Var.Observed <- 5    #(var. fully observed)
 global.no.Category     <- 5    #(categories) per discrete var.
 global.strong          <- 0    # applicable only when "triangular"
@@ -268,5 +268,5 @@ overall.Results[idx] <- sapply(overall.Results[idx], as.numeric)
 str(overall.Results)
 
 
-save(overall.Results, file = 'overall.Results.RData')
-write.table(overall.Results, file='overall.Results.csv', sep=",", col.names=TRUE, row.names=FALSE)
+save(overall.Results, file = 'overall.Results.1000.RData')
+write.table(overall.Results, file='overall.Results.1000.csv', sep=",", col.names=TRUE, row.names=FALSE)
